@@ -57,7 +57,7 @@ document.getElementById('view_cv').addEventListener('click', function() {
 });
 
 document.getElementById('view_porto').addEventListener('click',function(){
-    window.open('porto.pdf','_blank');
+    window.open('Samuel-Porto.pdf','_blank');
 });
 
 // Smooth Scroll Functionality

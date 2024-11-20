@@ -53,7 +53,7 @@ function deleteWord() {
 typeWriterEffect();
 
 document.getElementById('view_cv').addEventListener('click', function() {
-    window.open('SamuelTheophylusWieguna-CV.pdf', '_blank'); // Open the CV in a new tab
+    window.open('Samuel-PDF.pdf', '_blank'); // Open the CV in a new tab
 });
 
 document.getElementById('view_porto').addEventListener('click',function(){

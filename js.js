@@ -1,76 +1,88 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const burger = document.querySelector('.burger');
-    const navLinks = document.querySelector('.nav-links');
-  
-    burger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      burger.classList.toggle('toggle');
+document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.querySelector(".burger");
+  const navLinks = document.querySelector(".nav-links");
+
+  burger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    burger.classList.toggle("toggle");
+  });
+
+  const navAnchors = document.querySelectorAll(".nav-links a");
+  navAnchors.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     });
   });
-  
-const greetings = [
-    " Hello,",
-    " Halo,",
-    " 안녕,",
-    " こんにちは,"
-];
 
-let currentIndex = 0; 
-let charIndex = 0; 
-const changingWordElement = document.getElementById('changing-word');
-const typingSpeed = 100; 
-const deleteSpeed = 50; 
-const pauseDuration = 1500; 
+  const greetings = [" Hello,", " Halo,", " 안녕,", " こんにちは,"];
+  let currentIndex = 0;
+  let charIndex = 0;
+  const changingWordElement = document.getElementById("changing-word");
+  const typingSpeed = 100;
+  const deleteSpeed = 50;
+  const pauseDuration = 1500;
 
-function typeWriterEffect() {
+  function typeWriterEffect() {
     const currentGreeting = greetings[currentIndex];
     if (charIndex < currentGreeting.length) {
-        changingWordElement.textContent = currentGreeting.substring(0, charIndex + 1); 
-        setTimeout(typeWriterEffect, typingSpeed);
+      changingWordElement.textContent = currentGreeting.substring(
+        0,
+        charIndex + 1
+      );
+      charIndex++;
+      setTimeout(typeWriterEffect, typingSpeed);
     } else {
-        setTimeout(() => {
-            deleteWord();
-        }, pauseDuration); 
+      setTimeout(() => {
+        deleteWord();
+      }, pauseDuration);
     }
-}
+  }
 
-function deleteWord() {
+  function deleteWord() {
     const currentGreeting = greetings[currentIndex];
     if (charIndex > 0) {
-        changingWordElement.textContent = currentGreeting.substring(0, charIndex - 1); 
-        charIndex--;
-        setTimeout(deleteWord, deleteSpeed);
+      changingWordElement.textContent = currentGreeting.substring(
+        0,
+        charIndex - 1
+      );
+      charIndex--;
+      setTimeout(deleteWord, deleteSpeed);
     } else {
-        currentIndex = (currentIndex + 1) % greetings.length; 
-        charIndex = 0;
-        setTimeout(typeWriterEffect, typingSpeed); 
+      currentIndex = (currentIndex + 1) % greetings.length;
+      setTimeout(typeWriterEffect, typingSpeed);
     }
-}
+  }
 
-typeWriterEffect();
+  typeWriterEffect();
 
-document.getElementById('view_cv').addEventListener('click', function() {
-    window.open('Samuel-Cv.pdf', '_blank'); 
+  document.getElementById("view_cv").addEventListener("click", function () {
+    window.open("Samuel-Cv.pdf", "_blank");
+  });
+
+  document.getElementById("view_porto").addEventListener("click", function () {
+    window.open("Samuel-Porto.pdf", "_blank");
+  });
 });
 
-document.getElementById('view_porto').addEventListener('click',function(){
-    window.open('Samuel-Porto.pdf','_blank');
-});
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll(".nav-links a");
 
-document.addEventListener("DOMContentLoaded", function() {
-    const navLinks = document.querySelectorAll('.nav-links a');
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault(); 
-            const targetId = this.getAttribute('href'); 
-            const targetSection = document.querySelector(targetId); 
-
-            targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     });
+  });
 });
-

@@ -66,6 +66,9 @@ header {
     transition: transform 0.3s ease;
 }
 
+.achievement-item{
+    gap: 20px;
+}
 .achievement-item img:hover {
     transform: scale(1.05);
 }

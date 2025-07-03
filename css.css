@@ -6,8 +6,11 @@
     scroll-behavior: smooth;
 }
 
+html::-webkit-scrollbar{
+    display: none;
+}
 body {
-    font-family: Helvetica, Arial, sans-serif; /* Setting Helvetica as the primary font */
+    font-family: Helvetica, Arial, sans-serif; 
 }
 
 header {
@@ -19,7 +22,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    border-bottom: 2px solid black;
+    height: 9vh;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -113,13 +116,22 @@ header {
     }
 }
 
-/* Profile section styles */
 .profile {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 40px 0;
 }
+
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.small-icon {
+    font-size: 17px;
+    margin-right: 8px;
+}
+
 
 .profile-container {
     display: flex;
@@ -129,11 +141,10 @@ header {
 }
 
 .profile-photo {
-    width: 180px; /* Increased width for larger photo */
-    height: 180px; /* Increased height for larger photo */
+    width: 180px; 
+    height: 180px; 
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid black;
 }
 
 .profile-text {
@@ -214,43 +225,42 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
 }
 
-main1 {
-    margin-top: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
+.main1 .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     padding: 0 20px;
+    margin-bottom: 30px
 }
 
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
+    .main1 .container {
+        grid-template-columns: 1fr;
     }
 }
 
 .activity, .education {
-    flex: 1;
-    min-width: 200px;
-    padding: 10px;
+    width: 100%;
+    padding: 15px;
     box-sizing: border-box;
     border: 2px solid black;
-    border-radius: 7px;
+    border-radius: 10px;
     text-align: center;
+    height: 100%; /* supaya tinggi juga ikut rata kalau isinya beda */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
 
 .activity h5, .education h5 {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 .material-icons-outlined {
@@ -311,7 +321,7 @@ main2 h1 {
     transform: translateY(-10px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     background-color: black;
-    color: white; /* Change text color on hover */
+    color: white;
 }
 
 .skill-card p {
@@ -335,31 +345,31 @@ main2 h1 {
     }
 }
 
-main3 {
-    text-align: center;
-    margin-top: 3rem;
-}
-
-main3 h1 {
+.projecth1 h1{
     font-size: 2rem;
     margin-top: 4rem;
     color: #333;
+    text-align: center;
 }
 
-.projectcontainer {
+.containerproject{
+    text-align: center;
+    margin-top: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.projectcontainer {
     padding: 20px;
 }
 
 .project-image {
     display: block;
     margin: 0 auto;
-    border: 4px solid #333; /* Dark border */
+    border: 4px solid #333;
     border-radius: 10px;
-    width: 100%; /* Make responsive */
-    max-width: 500px; /* Increased max size */
+    width: 100%; 
+    max-width: 500px; 
 }
 
 .github-button {
@@ -372,7 +382,7 @@ main3 h1 {
     cursor: pointer;
     font-size: 16px;
     width: 100%;
-    max-width: 500px; /* Match image width */
+    max-width: 500px; 
 }
 
 .github-button:hover {
@@ -394,25 +404,25 @@ main5 h1 {
 .social-container {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Space between icons */
+    gap: 20px; 
 }
 
 .social-icon {
-    width: 40px; /* Adjust size as needed */
-    height: 40px; /* Adjust size as needed */
+    width: 40px; 
+    height: 40px; 
 }
 .footer {
     margin-top: 1rem;
-    background-color: #f8f9fa; /* Light background for contrast */
-    padding: 20px 0; /* Padding above and below the text */
-    text-align: center; /* Center the text */
-    border-top: 2px solid black; /* Top border */
-    position: relative; /* Keep it positioned relative */
-    bottom: 0; /* Make sure it stays at the bottom if needed */
-    width: 100%; /* Full width */
+    background-color: #f8f9fa; 
+    padding: 20px 0; 
+    text-align: center; 
+    border-top: 2px solid black; 
+    position: relative; 
+    bottom: 0; 
+    width: 100%; 
 }
 
 .footer-content {
-    margin: 0 auto; /* Center the content */
-    max-width: 800px; /* Optional: limit width for larger screens */
+    margin: 0 auto; 
+    max-width: 800px; 
 }

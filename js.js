@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
-// JavaScript for typewriter effect
 const greetings = [
     " Hello,",
     " Halo,",
@@ -16,61 +15,57 @@ const greetings = [
     " こんにちは,"
 ];
 
-let currentIndex = 0; // Current greeting index
-let charIndex = 0; // Current character index
+let currentIndex = 0; 
+let charIndex = 0; 
 const changingWordElement = document.getElementById('changing-word');
-const typingSpeed = 100; // Speed of typing in milliseconds
-const deleteSpeed = 50; // Speed of deleting in milliseconds
-const pauseDuration = 1500; // Pause after a full phrase
+const typingSpeed = 100; 
+const deleteSpeed = 50; 
+const pauseDuration = 1500; 
 
 function typeWriterEffect() {
     const currentGreeting = greetings[currentIndex];
     if (charIndex < currentGreeting.length) {
-        changingWordElement.textContent = currentGreeting.substring(0, charIndex + 1); // Add next character
-        charIndex++;
+        changingWordElement.textContent = currentGreeting.substring(0, charIndex + 1); 
         setTimeout(typeWriterEffect, typingSpeed);
     } else {
         setTimeout(() => {
             deleteWord();
-        }, pauseDuration); // Pause before deleting
+        }, pauseDuration); 
     }
 }
 
 function deleteWord() {
     const currentGreeting = greetings[currentIndex];
     if (charIndex > 0) {
-        changingWordElement.textContent = currentGreeting.substring(0, charIndex - 1); // Remove last character
+        changingWordElement.textContent = currentGreeting.substring(0, charIndex - 1); 
         charIndex--;
         setTimeout(deleteWord, deleteSpeed);
     } else {
-        currentIndex = (currentIndex + 1) % greetings.length; // Cycle through greetings
-        charIndex = 0; // Reset charIndex for the next greeting
-        setTimeout(typeWriterEffect, typingSpeed); // Start typing next greeting
+        currentIndex = (currentIndex + 1) % greetings.length; 
+        charIndex = 0;
+        setTimeout(typeWriterEffect, typingSpeed); 
     }
 }
 
-// Start the typewriter effect with the first greeting
 typeWriterEffect();
 
 document.getElementById('view_cv').addEventListener('click', function() {
-    window.open('Samuel-Cv.pdf', '_blank'); // Open the CV in a new tab
+    window.open('Samuel-Cv.pdf', '_blank'); 
 });
 
 document.getElementById('view_porto').addEventListener('click',function(){
     window.open('Samuel-Porto.pdf','_blank');
 });
 
-// Smooth Scroll Functionality
 document.addEventListener("DOMContentLoaded", function() {
     const navLinks = document.querySelectorAll('.nav-links a');
 
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent default anchor click behavior
-            const targetId = this.getAttribute('href'); // Get the target section ID
-            const targetSection = document.querySelector(targetId); // Select the target section
+            e.preventDefault(); 
+            const targetId = this.getAttribute('href'); 
+            const targetSection = document.querySelector(targetId); 
 
-            // Scroll smoothly to the target section
             targetSection.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'

@@ -85,6 +85,7 @@ header {
     display: flex;
     position: relative;
     margin-left: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* ✅ Tambahkan transisi */
 }
 
 .nav-links li {
@@ -135,23 +136,26 @@ header {
 
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        display: flex;
+        flex-direction: column;
         position: absolute;
         top: 60px;
         right: 20px;
         background-color: white;
-        flex-direction: column;
         width: 200px;
         padding: 15px;
         border-radius: 8px;
         z-index: 1000;
         border: 1px solid black;
-        margin-top: 13px;
-        margin-left: 10px;
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none; /* agar tidak bisa diklik saat sembunyi */
     }
 
     .nav-links.active {
-        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
     }
 
     .burger {

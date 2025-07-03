@@ -139,7 +139,7 @@ header {
         position: absolute;
         top: 60px;
         right: 20px;
-        background-color: white;
+        background-color: none;
         flex-direction: column;
         width: 200px;
         padding: 15px;

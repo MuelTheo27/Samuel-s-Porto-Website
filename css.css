@@ -39,6 +39,37 @@ header {
     }
 }
 
+.myAchieve {
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.myAchieve h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.achievement-item img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    transition: transform 0.3s ease;
+}
+
+.achievement-item img:hover {
+    transform: scale(1.05);
+}
+
 .nav-links {
     list-style: none;
     display: flex;

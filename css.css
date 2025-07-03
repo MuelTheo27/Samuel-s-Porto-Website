@@ -150,6 +150,8 @@ header {
         opacity: 0;
         transform: translateY(-10px);
         pointer-events: none; /* agar tidak bisa diklik saat sembunyi */
+        margin-top: 13px;
+        margin-left: 10px;
     }
 
     .nav-links.active {
